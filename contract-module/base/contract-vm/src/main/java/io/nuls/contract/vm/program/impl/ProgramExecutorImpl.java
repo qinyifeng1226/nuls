@@ -293,7 +293,7 @@ public class ProgramExecutorImpl implements ProgramExecutor {
             BigInteger accountBalance = getAccountBalance(programInvoke.getContractAddress());
             BigInteger vmBalance = repository.getBalance(programInvoke.getContractAddress());
             if (!programInvoke.isInternalCall() && vmBalance.compareTo(accountBalance) != 0) {
-                return revert(String.format("balance error: accountBalance=%s, vmBalance=%s", accountBalance, vmBalance));
+                //return revert(String.format("balance error: accountBalance=%s, vmBalance=%s", accountBalance, vmBalance));
             }
 
             logTime("load balance");

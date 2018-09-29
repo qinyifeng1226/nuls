@@ -53,6 +53,7 @@ import io.nuls.contract.vm.program.ProgramTransfer;
 import io.nuls.contract.vm.program.impl.ProgramContext;
 import io.nuls.contract.vm.program.impl.ProgramInvoke;
 import io.nuls.contract.vm.util.Log;
+import io.nuls.kernel.utils.AddressTool;
 import org.apache.commons.lang3.StringUtils;
 import org.ethereum.core.Repository;
 import org.objectweb.asm.tree.LookupSwitchInsnNode;
@@ -1066,7 +1067,7 @@ public class VM {
         return gasCost;
     }
 
-    public BlockHeaderDto getBlockHeader(long number) {
+    public BlockHeaderDto getBlockHeader1(long number) {
         if (this.vmContext != null) {
             BlockHeaderDto blockHeader = null;
             try {
@@ -1083,15 +1084,15 @@ public class VM {
         }
     }
 
-//    public BlockHeaderDto getBlockHeader(long number) {
-//        BlockHeaderDto blockHeaderDto = new BlockHeaderDto();
-//        blockHeaderDto.setHash("afafaf");
-//        blockHeaderDto.setHeight(100);
-//        blockHeaderDto.setTxCount(100);
-//        blockHeaderDto.setPackingAddress(AddressTool.getAddress("NsdwCuCKs2AXFfUT7PxXXJPm2XxybX6H"));
-//        blockHeaderDto.setTime(1535012808001L);
-//        return blockHeaderDto;
-//    }
+    public BlockHeaderDto getBlockHeader(long number) {
+        BlockHeaderDto blockHeaderDto = new BlockHeaderDto();
+        blockHeaderDto.setHash("afafaf");
+        blockHeaderDto.setHeight(100);
+        blockHeaderDto.setTxCount(100);
+        blockHeaderDto.setPackingAddress(AddressTool.getAddress("NsdwCuCKs2AXFfUT7PxXXJPm2XxybX6H"));
+        blockHeaderDto.setTime(1535012808001L);
+        return blockHeaderDto;
+    }
 
     public Result getResult() {
         return result;

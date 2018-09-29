@@ -572,9 +572,18 @@ public class SystemProperties {
         }
     }
 
+    private String keyValueDatasource;
+
     @ValidateMe
     public String getKeyValueDataSource() {
-        return config.getString("keyvalue.datasource");
+        if (keyValueDatasource == null) {
+            keyValueDatasource = config.getString("keyvalue.datasource");
+        }
+        return keyValueDatasource;
+    }
+
+    public String setKeyValueDataSource(String keyvalueDatasource) {
+        return this.keyValueDatasource = keyvalueDatasource;
     }
 
     @ValidateMe
